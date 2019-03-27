@@ -17,3 +17,8 @@ Route::get('/', function () {
 Route::get('/index','blogsController@index')->name('index');
 Route::get('/create','blogsController@create');
 Route::post('/store','blogsController@store');
+Route::get('/show_blog/{id}','blogsController@show');
+Route::get('/edit/{id}','blogsController@edit');
+Route::post('/update/{id}','blogsController@update');
+Route::get('/delete/{id}','blogsController@delete');
+

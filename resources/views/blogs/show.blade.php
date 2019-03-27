@@ -14,37 +14,23 @@
 
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="{{url('create')}}"><span class="nav navbar-nav navbar-left"></span>create new blog post</a></li>
+      <li><a href="{{url('index')}}"><span class="nav navbar-nav navbar-left"></span>home</a></li>
     </ul>
   </div>
 </nav>
 
 
-<!--div class="container">
 
-@foreach($blogs as $blog)
-<ul>
-post_number:  {{$blog->id}}<br>
-title:  {{$blog->title}}<br>
-content: {{$blog->content}}
-</ul>
-@endforeach
-
-</div>-->
 <div class="container">
-<div class="row">
-<br><br>
-    @foreach($blogs as $blog)
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-header">{{$blog->title}}</h5>
-           <img src="{{asset($blog->image)}}"width="100" height="100">
-            <p>posted at : {{$blog->created_at}}</p>
-            <a href="{{url('show_blog',['blog'=>$blog->id])}}"  class="btn btn-primary">view  this post </a>
-          </div>
-        </div>
-      </div>
-      @endforeach
+<div class="card">
+
+  <div class="card-body">
+    <h5 class="card-title">{{$blog->title}}</h5>
+    <img src="{{asset($blog->image)}}" width="100" height="100">
+    <p class="card-text">{{$blog->content}}</p>
+    <a href="{{url('/index')}}"  class="btn btn-warning">back</a>
+    <a href="{{url('edit',['id'=>$blog->id])}}" class="btn btn-primary">edit</a>
+    <a href="{{url('delete',['id'=>$blog->id])}}" class="btn btn-danger">delete</a>
+  </div>
 </div>
 </div>

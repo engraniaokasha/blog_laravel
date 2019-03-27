@@ -11,19 +11,17 @@
 
 
 <div class="container">
-<form action="{{url('/store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{url('update',['blog'=>$blog->id])}}" method="POST">
 @csrf
   <div class="form-group">
     <label for="title">title</label>
-    <input type="text" class="form-control" name="title">
+    <input type="text" class="form-control" name="title" value="{{$blog->title}}">
   </div>
   <div class="form-group">
     <label for="content">content</label>
-    <textarea  class="form-control" name="content"></textarea>
+    <textarea  class="form-control" name="content">{{$blog->content}}</textarea>
   </div>
-  <div class="form-group">
-    <input type="file" class="form-contrl" name="images">
-  </div>
-  <button type="submit" class="btn btn-default">add post</button>
+
+  <button type="submit" class="btn btn-default">edit post</button>
 </form>
 </div>
