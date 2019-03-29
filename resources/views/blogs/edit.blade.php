@@ -11,15 +11,16 @@
 
 
 <div class="container">
-<form action="{{url('update',['blog'=>$blog->id])}}" method="POST">
+<form action="{{url('posts',['post'=>$post->id])}}" method="POST">
 @csrf
+@method('PUT')
   <div class="form-group">
     <label for="title">title</label>
-    <input type="text" class="form-control" name="title" value="{{$blog->title}}">
+    <input type="text" class="form-control" name="title" value="{{$post->title}}">
   </div>
   <div class="form-group">
     <label for="content">content</label>
-    <textarea  class="form-control" name="content">{{$blog->content}}</textarea>
+    <textarea  class="form-control" name="content">{{$post->content}}</textarea>
   </div>
 
   <button type="submit" class="btn btn-default">edit post</button>

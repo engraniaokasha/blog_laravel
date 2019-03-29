@@ -11,7 +11,7 @@
 
 
 <div class="container">
-<form action="{{url('/store')}}" method="POST" enctype="multipart/form-data">
+<form action="{{url('/posts')}}" method="POST" enctype="multipart/form-data">
 @csrf
   <div class="form-group">
     <label for="title">title</label>
